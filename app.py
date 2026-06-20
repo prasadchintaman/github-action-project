@@ -1,13 +1,9 @@
 https://github.com/prasadchintaman/simple-flask-app/blob/main/app.py
-from flask import Flask, render_template
+from flask import Flask
 app = Flask(__name__)
 
+@app.route("/")
+def hello():
+    return "Hello from Jenkins Shared Library Project we have to use for dependency"
 
-@app.route('/')
-def hello_world():
-    return render_template('index.html')
-
-
-@app.route('/health')
-def health():
-    return 'Server is up and running'
+app.run(host="0.0.0.0",port=80)
